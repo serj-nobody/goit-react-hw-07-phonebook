@@ -30,22 +30,21 @@ export const addContact = createAsyncThunk(
   'contact/add',
   async (data, thunkAPI) => {
     try {
-      console.log('WORKING!');
       const result = await api.addContact(data);
       return result;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }
   },
-  {
-    condition: (data, { getState }) => {
-      const { contacts } = getState();
-      if (duplicateName(data, contacts.items)) {
-        alert(`${data.name} is already in your contacts`);
-        return false;
-      }
-    }  
-  } 
+  // {
+  //   condition: (data, { getState }) => {
+  //     const { contacts } = getState();
+  //     if (duplicateName(data, contacts.items)) {
+  //       alert(`${data.name} is already in your contacts`);
+  //       return false;
+  //     }
+  //   } 
+  // } 
 );
 
 export const removeContact = createAsyncThunk(
