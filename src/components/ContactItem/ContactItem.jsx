@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { removeContact } from "redux/contactsSlice";
+import { removeContact } from "redux/Contacts/contacts-operations";
 
 import PropTypes from 'prop-types';
 import { ContactElement, ContactWrapper, ContactName, ContactNumber, Button } from "./ContactItem.styled";
@@ -9,10 +9,9 @@ import { ContactElement, ContactWrapper, ContactName, ContactNumber, Button } fr
 export const ContactItem = ({contact}) => {
   const dispatch = useDispatch();
 
-  const onRemoveContact = (payload) => {
-    const action = removeContact(payload);
-    dispatch(action);
-  }
+  const onRemoveContact = (id) => {
+    dispatch(removeContact(id));
+  };
 
   return (
     <ContactElement>

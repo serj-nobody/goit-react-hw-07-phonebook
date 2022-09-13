@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 import { useSelector, useDispatch } from "react-redux";
-import { filterContacts } from "redux/contactsSlice";
+import { filterContacts } from "redux/Filter/filter-slice"; 
 
 import { FilterContainer, FilterLabel, FilterInput } from "./Filter.styled";
 
@@ -9,7 +9,7 @@ import { FilterContainer, FilterLabel, FilterInput } from "./Filter.styled";
 const filterInputID = nanoid();
 
 export const Filter = () => {
-  const filter = useSelector(store => store.filter);
+  const filter = useSelector(state => state.filter);
 
   const dispatch = useDispatch();
 

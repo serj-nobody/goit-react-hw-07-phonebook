@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
 import { useDispatch } from "react-redux";
-import { addContact } from "redux/contactsSlice";
+import { addContact } from "redux/Contacts/contacts-operations";
 
 import { ContactFormStyled, InputWrapper, InputLabel, Input, Button } from "./ContactForm.styled";
 
@@ -46,6 +46,7 @@ export function ContactForm() {
     };
     dispatch(addContact(contact));
     reset();
+    // console.log('WORKING!');
   };
 
   return (
