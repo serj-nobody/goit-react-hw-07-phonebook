@@ -44,9 +44,9 @@ export function ContactForm() {
       name: name,
       number: number,
     };
+
     dispatch(addContact(contact));
     reset();
-    // console.log('WORKING!');
   };
 
   return (
